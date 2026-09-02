@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Support — Srujal Event Management</title>
+  <meta name="description" content="Reach out to Srujal Event Management to plan your next wedding, corporate summit, concert, or private event. View FAQs and contact details.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('srujalem_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header Nav -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+        <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="events.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Events</span>
+        </a>
+        <a href="about.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>About Us</span>
+        </a>
+        <a href="services.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="gallery.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="events.html" class="btn btn-primary"><span>Browse Events</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="events.html" class="nav-link">Events Deck</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </aside>
+
+  <!-- Contact Body -->
+  <main class="app-main">
+    <!-- Contact Hero Header -->
+    <div class="reveal-on-scroll" style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="hero-chip">💬 24/7 Dedicated Assistance</span>
+      <h1 style="font-size: 2.95rem; margin: 0.5rem 0 1rem; font-weight: 800;">Let's Create Something Extraordinary</h1>
+      <p style="color: var(--text-secondary); max-width: 680px; margin: 0 auto; font-size: 1.15rem; line-height: 1.65;">
+        Have questions about booking tickets, hosting custom royal weddings, corporate summits, or stage concerts? Send us a message and our production team will reply within 2 hours.
+      </p>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="contact-grid reveal-on-scroll">
+      <!-- Info Column -->
+      <div class="contact-card">
+        <h2 style="font-size: 1.65rem; margin-bottom: 0.5rem;">Contact Information</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">Reach out through any of our official channels or visit our production headquarters.</p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Global Headquarters</h4>
+              <p>Kurnool<br>Andhra Pradesh, India</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email Consultations</h4>
+              <p>contact@srujaleventmanagement.com<br>booking@srujaleventmanagement.com</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone & Live Hotline</h4>
+              <p>+91 91823 22918<br>Mon – Sat: 8:00 AM – 8:00 PM EST</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">⚡</div>
+            <div>
+              <h4>Average Response Time</h4>
+              <p><strong style="color: var(--accent-emerald);">Under 2 hours</strong> guaranteed for ticket & venue booking inquiries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="contact-card">
+        <h2 style="font-size: 1.65rem; margin-bottom: 0.5rem;">Send Us a Message</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Fill out your event details below to consult with our planning team.</p>
+
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="contact-name" placeholder="e.g. Sarah Jenkins" required class="form-input">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="contact-email" placeholder="sarah@example.com" required class="form-input">
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="contact-phone" placeholder="+91 91823 22918" required class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-category">Event Type <span class="req">*</span></label>
+              <select id="contact-category" class="form-input" required>
+                <option value="Weddings & Ceremonies">💍 Royal Weddings & Ceremonies</option>
+                <option value="Birthday Events">🎂 Birthday Celebrations</option>
+                <option value="Corporate Summits">💼 Corporate Summits & Conferences</option>
+                <option value="Concerts & Music">🎵 Concerts & Music Festivals</option>
+                <option value="Hackathons & Tech">💻 Developer Hackathons</option>
+                <option value="Esports & Gaming">🎮 Esports & Gaming Arenas</option>
+                <option value="College Fests">🎓 College Fests & Cultural</option>
+                <option value="Private Parties">🎉 Private Parties & Galas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-date">Estimated Event Date</label>
+              <input type="date" id="contact-date" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-guests">Estimated Number of Guests</label>
+              <select id="contact-guests" class="form-input">
+                <option value="50-150">50 – 150 Guests</option>
+                <option value="150-500">150 – 500 Guests</option>
+                <option value="500-1500">500 – 1,500 Guests</option>
+                <option value="1500+">1,500+ Large Arena / Festival</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-budget">Estimated Budget Range</label>
+              <select id="contact-budget" class="form-input">
+                <option value="Standard ($1k-$5k)">Standard ($1,000 – $5,000)</option>
+                <option value="Premium ($5k-$15k)">Premium ($5,000 – $15,000)</option>
+                <option value="Luxury ($15k-$50k)">Luxury ($15,000 – $50,000)</option>
+                <option value="Royal ($50k+)">Royal Gala ($50,000+)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject">Subject / Inquiry Summary <span class="req">*</span></label>
+            <input type="text" id="contact-subject" placeholder="e.g. Royal Wedding Mandap & Catering Inquiry" required class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message Details <span class="req">*</span></label>
+            <textarea id="contact-message" rows="4" placeholder="Provide details on venue, staging, sound, or ticketing preferences..." required class="form-input"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 0.5rem;">
+            Send Inquiry Now
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ ACCORDION SECTION (6 QUESTIONS) -->
+    <section class="reveal-on-scroll" style="margin-top: 5rem;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">❓ FAQ Help Center</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Frequently Asked Questions</h2>
+        <p style="color: var(--text-secondary);">Quick answers regarding event booking lead times, venue decoration, packages, and stage production.</p>
+      </div>
+
+      <div class="faq-accordion" style="max-width: 840px; margin: 0 auto;">
+        <!-- Question 1 -->
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>How early should I book an event with Srujal Event Management?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            For royal destination weddings and large arena concerts, we recommend booking 3 to 6 months in advance to secure venue mandates and artist schedules. For corporate summits, birthday galas, or hackathons, 2 to 4 weeks advance notice is usually sufficient.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you provide complete venue decoration & floral mandap styling?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            Yes! Our in-house creative design team crafts bespoke gold floral mandap installations, entrance arches, stage backdrops, balloon styling, red carpet setups, and thematic lighting tailored to your vision.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I customize an event package according to my specific budget?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. Every event package can be customized. You can select modular services including audio-visual sound engineering, catering, photography, instant SVG QR digital ticketing, or full turnkey management.
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you provide 4K photography and drone cinematography services?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            Yes, our media crew includes high-resolution 4K cinema camera operators, aerial drone cinematographers, 360-degree video booths, and instant digital photo delivery for guests.
+          </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can you manage large corporate summits and enterprise hackathons?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            Yes. We handle multi-day corporate conventions with high-density Wi-Fi grids, C-Suite registration desks, mentor judging portals, VIP lounges, and live attendee roster telemetry.
+          </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you handle concerts and 100kW line array stage production?</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            Yes. We provide complete arena stage production equipped with concert-grade 100kW Line Array sound systems, DMX 3D laser lighting, pyrotechnic fountain finales, and crowd safety barriers.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+            <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+          </a>
+          <p>Designing extraordinary weddings, concerts, corporate events, hackathons, and unforgettable luxury experiences across AP & Telangana.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=Weddings">Royal Weddings</a></li>
+            <li><a href="events.html?cat=Concerts">Arena Concerts</a></li>
+            <li><a href="events.html?cat=Corporate">Corporate Summits</a></li>
+            <li><a href="events.html?cat=Hackathons">Developer Hackathons</a></li>
+            <li><a href="events.html?cat=Gaming">Esports Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Social</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="events.html?view=tickets">My Ticket Wallet</a></li>
+            <li><a href="contact.html">Support Hotline</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Srujal Event Management. All rights reserved.</span>
+        <span>Crafted with Luxury Glassmorphism & Gold Aesthetics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

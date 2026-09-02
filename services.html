@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services & Pricing — Srujal Event Management</title>
+  <meta name="description" content="Explore Srujal Event Management services: Wedding Planning, Birthday Events, Corporate Summits, Concerts, Hackathons, Esports, College Fests, and Private Parties.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('srujalem_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header Nav -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+        <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="events.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Events</span>
+        </a>
+        <a href="about.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>About Us</span>
+        </a>
+        <a href="services.html" class="nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="gallery.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="events.html" class="btn btn-primary"><span>Browse Events</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="events.html" class="nav-link">Events Deck</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </aside>
+
+  <main class="app-main">
+    <!-- Services Hero Header -->
+    <div class="reveal-on-scroll" style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="hero-chip">⚡ Complete Production & Ticketing Ecosystem</span>
+      <h1 style="font-size: 2.95rem; margin: 0.5rem 0 1rem; font-weight: 800;">End-to-End Event Management Services</h1>
+      <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto; font-size: 1.15rem; line-height: 1.65;">
+        Whether hosting an intimate birthday gala, a 1,000-person developer hackathon, or a 20,000-guest arena music festival, Srujal Event Management powers every detail.
+      </p>
+    </div>
+
+    <!-- SERVICES GRID -->
+    <div class="services-grid reveal-on-scroll">
+      <!-- 1. Wedding Planning -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/royal_wedding.jpg" alt="Wedding Planning by Srujal Event Management" loading="lazy">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="service-icon-box">💍</div>
+          <h3 style="margin-bottom: 0;">Wedding Planning</h3>
+        </div>
+        <p>Complete wedding planning, floral mandap decoration, Baraat coordination, Sangeet choreography, and 108-item royal banquet guest management.</p>
+        <ul class="service-features-list">
+          <li>Custom luxury gold mandap & canopy design</li>
+          <li>Celebrity artist & Sangeet choreography</li>
+          <li>Royal hospitality & guest concierge desk</li>
+        </ul>
+        <a href="contact.html?service=Weddings" class="btn btn-secondary btn-block" style="margin-top: 1.25rem;">Learn More & Plan Wedding</a>
+      </div>
+
+      <!-- 2. Birthday Events -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/birthday_gala.jpg" alt="Birthday Events by Srujal Event Management" loading="lazy">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="service-icon-box">🎂</div>
+          <h3 style="margin-bottom: 0;">Birthday Events</h3>
+        </div>
+        <p>Extravagant theme decoration, live orchestra, Saxophone performances, 4K video booths, gourmet catering, and customized designer cakes.</p>
+        <ul class="service-features-list">
+          <li>Custom theme styling & backdrop balloon installations</li>
+          <li>Live Saxophone, DJ & 4K video booth</li>
+          <li>Royal banquet catering & designer cake production</li>
+        </ul>
+        <a href="contact.html?service=Birthdays" class="btn btn-secondary btn-block" style="margin-top: 1.25rem;">Learn More & Plan Birthday</a>
+      </div>
+
+      <!-- 3. Concerts -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/concert_stage.jpg" alt="Concerts by Srujal Event Management" loading="lazy">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="service-icon-box">🎵</div>
+          <h3 style="margin-bottom: 0;">Concerts</h3>
+        </div>
+        <p>Turnkey arena concert production equipped with 100kW Line Array sound systems, 3D laser stage art, pyrotechnic fountains, and crowd management.</p>
+        <ul class="service-features-list">
+          <li>100kW concert Line Array audio engineering</li>
+          <li>DMX laser & 3D hologram projection displays</li>
+          <li>Multi-tier arena crowd flow & security management</li>
+        </ul>
+        <a href="contact.html?service=Concerts" class="btn btn-secondary btn-block" style="margin-top: 1.25rem;">Learn More & Produce Concert</a>
+      </div>
+
+      <!-- 4. Hackathons -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/hackathon.jpg" alt="Hackathons by Srujal Event Management" loading="lazy">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="service-icon-box">💻</div>
+          <h3 style="margin-bottom: 0;">Hackathons</h3>
+        </div>
+        <p>24 to 48-hour continuous coding marathons with high-density Wi-Fi infrastructure, mentor code review lounges, pitch stages, and 24/7 catering.</p>
+        <ul class="service-features-list">
+          <li>Gigabit high-density Wi-Fi & power grid stations</li>
+          <li>Mentor judging portal & live pitch demo stage</li>
+          <li>24/7 participant lounge, gaming rest zones & catering</li>
+        </ul>
+        <a href="contact.html?service=Hackathons" class="btn btn-secondary btn-block" style="margin-top: 1.25rem;">Learn More & Host Hackathon</a>
+      </div>
+
+      <!-- 5. Esports Events -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/esports_arena.jpg" alt="Esports Events by Srujal Event Management" loading="lazy">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="service-icon-box">🎮</div>
+          <h3 style="margin-bottom: 0;">Esports Events</h3>
+        </div>
+        <p>High-octane e-sports tournament management featuring LAN server setups, low-latency streaming pods, LED caster desks, and live spectator production.</p>
+        <ul class="service-features-list">
+          <li>Ultra-low latency LAN networking & gaming pods</li>
+          <li>Live Twitch/YouTube shoutcaster booth & graphics overlay</li>
+          <li>Arena 4K LED screens, stage lighting & trophy awards</li>
+        </ul>
+        <a href="contact.html?service=Esports" class="btn btn-secondary btn-block" style="margin-top: 1.25rem;">Learn More & Manage Tournament</a>
+      </div>
+
+      <!-- 6. College Events -->
+      <div class="service-card">
+        <div class="service-img-wrap">
+          <img src="images/music_mainstage.jpg" alt="College Events by Srujal Event Management" loading="lazy">
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+          <div class="service-icon-box">🎓</div>
+          <h3 style="margin-bottom: 0;">College Events</h3>
+        </div>
+        <p>Annual college fests, cultural nights, technical symposiums, fashion shows, and celebrity guest night stage setups.</p>
+        <ul class="service-features-list">
+          <li>Stage sound, DMX lighting & LED backdrop screens</li>
+          <li>Celebrity artist booking & green room hospitality</li>
+          <li>Student QR ticket registration & gate check-in</li>
+        </ul>
+        <a href="contact.html?service=College" class="btn btn-secondary btn-block" style="margin-top: 1.25rem;">Learn More & Organize Fest</a>
+      </div>
+    </div>
+
+    <!-- PRICING TIERS SECTION -->
+    <section class="reveal-on-scroll" style="margin-top: 5rem;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">💎 Transparent Pricing</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Organizer Hosting Packages</h2>
+        <p style="color: var(--text-secondary);">Select the plan tailored to your event scale. No hidden surcharges.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Starter Host -->
+        <div class="pricing-card">
+          <h3>Starter Host</h3>
+          <p style="color: var(--text-secondary); font-size: 0.875rem;">Perfect for local meetups, workshops, and private parties.</p>
+          <div class="pricing-price">$0 <span>/ month</span></div>
+          <ul class="service-features-list" style="border: none; padding-top: 0; margin-bottom: 2rem;">
+            <li>Host up to 3 active events</li>
+            <li>Max 150 ticket capacity per event</li>
+            <li>Instant SVG QR digital pass generation</li>
+            <li>Email support & basic ticket wallet</li>
+          </ul>
+          <a href="events.html" class="btn btn-secondary btn-block">Get Started Free</a>
+        </div>
+
+        <!-- Pro Organizer -->
+        <div class="pricing-card featured">
+          <span class="pricing-badge">MOST POPULAR</span>
+          <h3>Pro Organizer</h3>
+          <p style="color: var(--text-secondary); font-size: 0.875rem;">Ideal for tech summits, conferences & concerts.</p>
+          <div class="pricing-price" style="color: var(--accent-gold-light);">$49 <span>/ month</span></div>
+          <ul class="service-features-list" style="border: none; padding-top: 0; margin-bottom: 2rem;">
+            <li>Unlimited active event listings</li>
+            <li>Up to 5,000 ticket capacity</li>
+            <li>Real-time revenue telemetry & charts</li>
+            <li>One-click CSV attendee roster export</li>
+            <li>VIP All-Access & General ticket tier options</li>
+          </ul>
+          <a href="events.html" class="btn btn-primary btn-block">Launch Pro Deck</a>
+        </div>
+
+        <!-- Enterprise Festival -->
+        <div class="pricing-card">
+          <h3>Enterprise Festival</h3>
+          <p style="color: var(--text-secondary); font-size: 0.875rem;">For large-scale arenas, festivals & royal destination weddings.</p>
+          <div class="pricing-price">$199 <span>/ month</span></div>
+          <ul class="service-features-list" style="border: none; padding-top: 0; margin-bottom: 2rem;">
+            <li>Unlimited ticket capacity</li>
+            <li>Dedicated account manager & production crew</li>
+            <li>Custom branding on SVG QR ticket passes</li>
+            <li>24/7 Priority hotline & venue AV support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary btn-block">Contact Sales</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+            <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+          </a>
+          <p>Designing extraordinary weddings, concerts, corporate events, hackathons, and unforgettable luxury experiences across AP & Telangana.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=Weddings">Royal Weddings</a></li>
+            <li><a href="events.html?cat=Concerts">Arena Concerts</a></li>
+            <li><a href="events.html?cat=Corporate">Corporate Summits</a></li>
+            <li><a href="events.html?cat=Hackathons">Developer Hackathons</a></li>
+            <li><a href="events.html?cat=Gaming">Esports Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Social</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="events.html?view=tickets">My Ticket Wallet</a></li>
+            <li><a href="contact.html">Support Hotline</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Srujal Event Management. All rights reserved.</span>
+        <span>Crafted with Luxury Glassmorphism & Gold Aesthetics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

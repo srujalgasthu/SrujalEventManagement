@@ -1,0 +1,88 @@
+Created At: 2026-08-18T22:07:49+05:30
+Completed At: 2026-08-18T22:07:49+05:30
+File Path: `file:///c:/Users/sruja/OneDrive/Desktop/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/srujal%20event%20management/gallery.html`
+Total Lines: 204
+Total Bytes: 10739
+Showing lines 1 to 204
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: <!DOCTYPE html>
+2: <html lang="en" data-theme="dark">
+3: <head>
+4:   <meta charset="UTF-8">
+5:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+6:   <title>Event Photo & Highlights Gallery — Srujal Event Management</title>
+7:   <meta name="description" content="Explore high-definition photos and highlights from flagship AI summits, electronic music festivals, and esports arenas hosted on Srujal Event Management.">
+8:   
+9:   <!-- Google Fonts -->
+10:   <link rel="preconnect" href="https://fonts.googleapis.com">
+11:   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+12:   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+13:   
+14:   <!-- App Stylesheet -->
+15:   <link rel="stylesheet" href="styles.css">
+16:   <script>
+17:     (function() {
+18:       const saved = localStorage.getItem('srujalem_theme') || localStorage.getItem('eventpulse_theme') || 'dark';
+19:       document.documentElement.setAttribute('data-theme', saved);
+20:     })();
+21:   </script>
+22: </head>
+23: <body>
+24:   <!-- Header Nav -->
+25:   <header class="app-header">
+26:     <div class="header-container">
+27:       <a href="index.html" class="brand-logo">
+28:         <img src="images/logo.png" alt="Srujal Event Manager Emblem Logo" class="brand-logo-img">
+29:         <span class="logo-text"><span class="logo-name">Srujal</span><span 
+<truncated 8166 bytes>
+ct.html">Support Hotline</a></li>
+156:           </ul>
+157:         </div>
+158:       </div>
+159:       <div class="footer-bottom">
+160:         <span>© 2026 Srujal Event Management. All rights reserved.</span>
+161:         <span>Crafted with Obsidian Glassmorphism Aesthetics</span>
+162:       </div>
+163:     </div>
+164:   </footer>
+165: 
+166:   <script>
+167:     document.addEventListener('DOMContentLoaded', () => {
+168:       // Theme Toggle
+169:       const themeToggle = document.getElementById('theme-toggle');
+170:       if (themeToggle) {
+171:         const savedTheme = localStorage.getItem('srujalem_theme') || 'dark';
+172:         document.documentElement.setAttribute('data-theme', savedTheme);
+173:         themeToggle.addEventListener('click', () => {
+174:           const current = document.documentElement.getAttribute('data-theme') || 'dark';
+175:           const next = current === 'dark' ? 'light' : 'dark';
+176:           document.documentElement.setAttribute('data-theme', next);
+177:           localStorage.setItem('srujalem_theme', next);
+178:         });
+179:       }
+180: 
+181:       // Filter Pills
+182:       const pills = document.querySelectorAll('#gallery-pills .pill-btn');
+183:       const cards = document.querySelectorAll('.gallery-card');
+184: 
+185:       pills.forEach(pill => {
+186:         pill.addEventListener('click', () => {
+187:           pills.forEach(p => p.classList.remove('active'));
+188:           pill.classList.add('active');
+189: 
+190:           const cat = pill.getAttribute('data-cat');
+191:           cards.forEach(card => {
+192:             if (cat === 'All' || card.getAttribute('data-cat') === cat) {
+193:               card.style.display = 'block';
+194:             } else {
+195:               card.style.display = 'none';
+196:             }
+197:           });
+198:         });
+199:       });
+200:     });
+201:   </script>
+202: </body>
+203: </html>
+204: 
+The above content shows the entire, complete file contents of the requested file.

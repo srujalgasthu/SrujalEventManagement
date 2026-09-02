@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srujal Event Management — Create Moments. Celebrate Life.</title>
+  <meta name="description" content="We design extraordinary weddings, concerts, corporate summits, birthdays, hackathons, and unforgettable experiences with instant QR ticketing.">
+  
+  <!-- Google Fonts --> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">   
+  <script>
+    (function() {
+      const saved = localStorage.getItem('srujalem_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header Nav -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="Srujal Event Management Logo" class="brand-logo-img">
+        <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="events.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Events</span>
+        </a>
+        <a href="about.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>About Us</span>
+        </a>
+        <a href="services.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="gallery.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="events.html" class="btn btn-primary"><span>Explore Events</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="events.html" class="nav-link">Events Deck</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </aside>
+
+  <main class="app-main">
+    <!-- SECTION 1: CINEMATIC HERO SECTION -->
+    <section class="hero-banner reveal-on-scroll" style="background: linear-gradient(180deg, rgba(7, 9, 14, 0.65) 0%, rgba(7, 9, 14, 0.95) 100%), url('images/royal_wedding.jpg') center/cover no-repeat;">
+      <div class="hero-content">
+        <span class="hero-chip">✨ Premier Luxury Event Management Platform</span>
+        <h1 class="hero-title">Create Moments. <br><span style="color: var(--accent-gold-light); text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);">Celebrate Life.</span></h1>
+        <p class="hero-subtitle">We design extraordinary weddings, concerts, corporate events, birthdays, hackathons and unforgettable experiences crafted with zero-friction digital ticketing.</p>
+        
+        <div style="display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap;">
+          <a href="events.html" class="btn btn-primary btn-lg">
+            <span>Explore Events</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Plan Your Event</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">500+</span>
+            <span class="stat-lbl">Events</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">150K+</span>
+            <span class="stat-lbl">Guests</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">50+</span>
+            <span class="stat-lbl">Venues</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">99%</span>
+            <span class="stat-lbl">Client Satisfaction</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art-card" style="background: linear-gradient(135deg, rgba(22, 30, 46, 0.9) 0%, rgba(13, 18, 29, 0.95) 100%), url('images/concert_stage.jpg') center/cover no-repeat;">
+        <div class="art-glow-orb"></div>
+        <div class="featured-badge">🔥 Featured Event</div>
+        <div class="art-details">
+          <span class="art-category" style="color: var(--accent-gold-light);">Royal Sangeet & Concert Gala</span>
+          <h3>Star DJ Musical Night & Pyro Show</h3>
+          <p>Outdoor Arena, Hyderabad • Sep 20, 2026</p>
+          <a href="events.html" class="btn btn-sm btn-glass">Quick Book Pass</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: UPCOMING EVENTS DECK -->
+    <section class="reveal-on-scroll" style="margin: 4rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="hero-chip" style="margin-bottom: 0.5rem;">🎟️ Live Discovery</span>
+          <h2 style="font-size: 2.2rem;">Upcoming Extraordinary Events</h2>
+          <p style="color: var(--text-secondary);">Browse upcoming flagship weddings, concerts, conferences, and hackathons.</p>
+        </div>
+        <a href="events.html" class="btn btn-secondary">View All Events Deck &rarr;</a>
+      </div>
+
+      <div class="events-grid">
+        <!-- Card 1 -->
+        <article class="event-card">
+          <div class="card-banner" style="background: url('images/royal_wedding.jpg') center/cover no-repeat;">
+            <div class="card-banner-overlay"></div>
+            <span class="category-tag">Weddings & Ceremonies</span>
+            <span class="price-tag">$2499</span>
+          </div>
+          <div class="card-content">
+            <div class="card-date-row">
+              <span>Oct 14, 2026 • 05:00 PM</span>
+            </div>
+            <h3 class="card-title">Royal Heritage Destination Wedding & Sangeet Gala</h3>
+            <div class="card-location">📍 Royal Pavilion Palace, Kurnool</div>
+            <div class="card-footer">
+              <div class="capacity-progress">
+                <span>115 seats remaining</span>
+                <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+              </div>
+              <a href="events.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="event-card">
+          <div class="card-banner" style="background: url('images/tech_ai_summit.jpg') center/cover no-repeat;">
+            <div class="card-banner-overlay"></div>
+            <span class="category-tag">Tech & Corporate</span>
+            <span class="price-tag">$1499</span>
+          </div>
+          <div class="card-content">
+            <div class="card-date-row">
+              <span>Sep 24, 2026 • 09:00 AM</span>
+            </div>
+            <h3 class="card-title">National AI & Enterprise Tech Summit 2026</h3>
+            <div class="card-location">📍 HITEX Convention Centre, Hyderabad</div>
+            <div class="card-footer">
+              <div class="capacity-progress">
+                <span>160 seats remaining</span>
+                <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 84%;"></div></div>
+              </div>
+              <a href="events.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="event-card">
+          <div class="card-banner" style="background: url('images/concert_stage.jpg') center/cover no-repeat;">
+            <div class="card-banner-overlay"></div>
+            <span class="category-tag">Music & Concerts</span>
+            <span class="price-tag">$899</span>
+          </div>
+          <div class="card-content">
+            <div class="card-date-row">
+              <span>Sep 20, 2026 • 06:00 PM</span>
+            </div>
+            <h3 class="card-title">Srujal Musical Beats & Star DJ Concert Gala</h3>
+            <div class="card-location">📍 Gachibowli Outdoor Arena, Hyderabad</div>
+            <div class="card-footer">
+              <div class="capacity-progress">
+                <span>320 seats remaining</span>
+                <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 87%;"></div></div>
+              </div>
+              <a href="events.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="event-card">
+          <div class="card-banner" style="background: url('images/birthday_gala.jpg') center/cover no-repeat;">
+            <div class="card-banner-overlay"></div>
+            <span class="category-tag">Galas & Celebrations</span>
+            <span class="price-tag">$1199</span>
+          </div>
+          <div class="card-content">
+            <div class="card-date-row">
+              <span>Oct 02, 2026 • 07:00 PM</span>
+            </div>
+            <h3 class="card-title">Luxury Birthday & Jubilee Celebration Gala</h3>
+            <div class="card-location">📍 Grand Jubilee Hall, Kurnool</div>
+            <div class="card-footer">
+              <div class="capacity-progress">
+                <span>40 seats remaining</span>
+                <div class="progress-bar-track"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+              </div>
+              <a href="events.html" class="btn btn-sm btn-primary">Book Now</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECTION 3: EVENT CATEGORIES -->
+    <section class="reveal-on-scroll" style="margin: 4rem 0;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">✨ Comprehensive Portfolio</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Explore Event Categories</h2>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto;">We offer turnkey event management and ticketing services tailored to every occasion.</p>
+      </div>
+
+      <div class="features-grid">
+        <a href="events.html?cat=Birthdays" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/birthday_gala.jpg') center/cover no-repeat;">
+          <div class="feature-icon">🎂</div>
+          <h3>Birthdays</h3>
+          <p>Custom theme styling, live orchestra, Saxophone performances, and gourmet banquet catering.</p>
+        </a>
+
+        <a href="events.html?cat=Weddings" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/royal_wedding.jpg') center/cover no-repeat;">
+          <div class="feature-icon">💍</div>
+          <h3>Weddings</h3>
+          <p>Opulent gold floral mandap decor, Baraat processions, Sangeet choreography, and luxury hospitality.</p>
+        </a>
+
+        <a href="events.html?cat=Concerts" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/concert_stage.jpg') center/cover no-repeat;">
+          <div class="feature-icon">🎵</div>
+          <h3>Concerts</h3>
+          <p>100kW concert line array audio, 3D laser stage art, pyrotechnic fountains, and crowd management.</p>
+        </a>
+
+        <a href="events.html?cat=Corporate" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/corporate_summit.png') center/cover no-repeat;">
+          <div class="feature-icon">💼</div>
+          <h3>Corporate Events</h3>
+          <p>C-Suite forums, tech summits, product launches, keynote speaker stages, and executive VIP lounges.</p>
+        </a>
+
+        <a href="events.html?cat=Hackathons" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/hackathon.jpg') center/cover no-repeat;">
+          <div class="feature-icon">💻</div>
+          <h3>Hackathons</h3>
+          <p>48-hour continuous coding marathons with high-speed Wi-Fi grids, mentor lounges, and demo arenas.</p>
+        </a>
+
+        <a href="events.html?cat=Gaming" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/esports_arena.jpg') center/cover no-repeat;">
+          <div class="feature-icon">🎮</div>
+          <h3>Esports</h3>
+          <p>Battle royale arenas equipped with massive 4K LED screens, LED shoutcaster desks, and LAN servers.</p>
+        </a>
+
+        <a href="events.html?cat=College" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/music_mainstage.jpg') center/cover no-repeat;">
+          <div class="feature-icon">🎓</div>
+          <h3>College Events</h3>
+          <p>Annual fests, cultural nights, technical symposiums, and celebrity night stage productions.</p>
+        </a>
+
+        <a href="events.html?cat=Parties" class="feature-card" style="background: linear-gradient(180deg, rgba(7,9,14,0.7) 0%, rgba(7,9,14,0.95) 100%), url('images/music_dj_rave.jpg') center/cover no-repeat;">
+          <div class="feature-icon">🎉</div>
+          <h3>Private Parties</h3>
+          <p>Exclusive DJ bashes, pool galas, milestone celebrations, and bespoke private entertainment.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHY CHOOSE US -->
+    <section class="reveal-on-scroll" style="margin: 4rem 0;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">⭐ The Srujal Advantage</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Why Choose Srujal Event Management</h2>
+        <p style="color: var(--text-secondary); max-width: 650px; margin: 0 auto;">Combining world-class production creativity with instant encrypted digital ticketing technology.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Professional Planning</h3>
+          <p>Meticulous step-by-step coordination from venue selection and guest reception to staging and hospitality.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Creative Event Design</h3>
+          <p>Bespoke royal mandap canopy styling, 3D hologram stage lighting, and custom theme decorations.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Experienced Team</h3>
+          <p>Over 12 years of hands-on experience producing 500+ successful events across Andhra Pradesh and Telangana.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Seamless Execution</h3>
+          <p>Instant SVG QR code digital ticket passes ensure zero-wait venue gate entry and live analytics tracking.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: EVENT PROCESS TIMELINE -->
+    <section class="reveal-on-scroll" style="margin: 5rem 0;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="hero-chip">🚀 Our Workflow</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">How We Create Extraordinary Events</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">A seamless 4-step process from vision concept to flawless execution.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-num">1</div>
+          <h3>Tell Us Your Vision</h3>
+          <p>Share your event concept, guest requirements, budget parameters, and theme preferences with our team.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">2</div>
+          <h3>Plan & Design</h3>
+          <p>We craft 3D venue layouts, floral mandap designs, sound/lighting schedules, and ticket pricing tiers.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">3</div>
+          <h3>Organize & Coordinate</h3>
+          <p>Our production crew coordinates artists, AV engineering, catering, hospitality, and QR ticket issuance.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num">4</div>
+          <h3>Celebrate the Moment</h3>
+          <p>Enjoy a zero-friction, spectacular event while our live dashboard manages venue check-in telemetry.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: TESTIMONIALS -->
+    <section class="reveal-on-scroll" style="margin: 5rem 0;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">💬 Client Reviews</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Loved by Organizers & Couples</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Read feedback from clients who celebrated landmark events with Srujal Event Management.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">"Srujal Event Management designed our royal destination wedding in Kurnool. The gold floral mandap decor and 3D laser lighting were breathtaking. Our 800 guests were blown away!"</p>
+          <div class="testimonial-author">
+            <img src="images/royal_wedding.jpg" alt="Client Rajesh & Sneha" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Rajesh & Sneha Reddy</h4>
+              <span>Royal Wedding • Kurnool, AP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">"We hosted the National AI Tech Summit with 1,000+ delegates. The instant QR ticket wallet passes enabled zero gate queue time, and the organizer dashboard was flawless!"</p>
+          <div class="testimonial-author">
+            <img src="images/tech_ai_summit.jpg" alt="Dr. Vikramaditya Verma" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Dr. Vikramaditya Verma</h4>
+              <span>AI Tech Summit • Hyderabad</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-rating">★★★★★</div>
+          <p class="testimonial-quote">"The 100kW Line Array sound system and laser pyro fountains during our music concert gala created an arena atmosphere equal to international music festivals."</p>
+          <div class="testimonial-author">
+            <img src="images/concert_stage.jpg" alt="Armaan Malik Performance" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Kiran Kumar</h4>
+              <span>Arena Concert Producer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FINAL CTA BANNER -->
+    <section class="reveal-on-scroll" style="background: linear-gradient(135deg, #131a2a 0%, #07090e 100%); border: 1px solid rgba(212, 175, 55, 0.35); border-radius: var(--radius-lg); padding: 4.5rem 2.5rem; color: #ffffff; text-align: center; margin-top: 4rem; position: relative; overflow: hidden; box-shadow: var(--shadow-lg);">
+      <div style="position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 450px; height: 220px; background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, transparent 70%); pointer-events: none;"></div>
+      <div style="position: relative; z-index: 2; max-width: 720px; margin: 0 auto;">
+        <span class="hero-chip" style="margin-bottom: 1rem;">👑 Let's Collaborate</span>
+        <h2 style="font-size: 2.6rem; color: var(--text-primary); margin-bottom: 1rem; font-weight: 800;">Ready to Create Your Next Unforgettable Event?</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.25rem;">Join hundreds of couples, enterprise executives, and festival creators using Srujal Event Management to turn visions into reality.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Plan My Event</a>
+          <a href="events.html" class="btn btn-secondary btn-lg">Explore Events Deck</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+            <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+          </a>
+          <p>Designing extraordinary weddings, concerts, corporate events, hackathons, and unforgettable luxury experiences across AP & Telangana.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=Weddings">Royal Weddings</a></li>
+            <li><a href="events.html?cat=Concerts">Arena Concerts</a></li>
+            <li><a href="events.html?cat=Corporate">Corporate Summits</a></li>
+            <li><a href="events.html?cat=Hackathons">Developer Hackathons</a></li>
+            <li><a href="events.html?cat=Gaming">Esports Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Social</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="events.html?view=tickets">My Ticket Wallet</a></li>
+            <li><a href="contact.html">Support Hotline</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Srujal Event Management. All rights reserved.</span>
+        <span>Crafted with Luxury Glassmorphism & Gold Aesthetics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

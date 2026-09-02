@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Srujal Event Management</title>
+  <meta name="description" content="Discover the story, mission, leadership, and event architecture behind Srujal Event Management, founded by Srujal G.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('srujalem_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header Nav -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+        <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="events.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Events</span>
+        </a>
+        <a href="about.html" class="nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>About Us</span>
+        </a>
+        <a href="services.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="gallery.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="events.html" class="btn btn-primary"><span>Browse Events</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="events.html" class="nav-link">Events Deck</a>
+    <a href="about.html" class="nav-link active">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </aside>
+
+  <main class="app-main">
+    <!-- Hero Header -->
+    <div style="text-align: center; margin-bottom: 3.5rem;">
+      <span class="hero-chip">👑 Premier Experiential Production & Event Architecture</span>
+      <h1 style="font-size: 2.95rem; margin: 0.5rem 0 1rem; font-weight: 800;">We Turn Ideas Into Unforgettable Experiences</h1>
+      <p style="color: var(--text-secondary); max-width: 760px; margin: 0 auto; font-size: 1.15rem; line-height: 1.65;">
+        Founded by <strong>Srujal G.</strong>, Srujal Event Management is dedicated to transforming royal weddings, corporate summits, arena music festivals, and tech hackathons into majestic, zero-friction celebrations.
+      </p>
+    </div>
+
+    <!-- Company Story & Founder Hero Section -->
+    <section class="about-hero-grid" style="align-items: center; gap: 3rem;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-gold); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+          <span>🏛️ Established 2020 • Kurnool, AP</span>
+        </div>
+        <h2 style="font-size: 2.1rem; margin-bottom: 1rem;">Company Overview & Heritage</h2>
+        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.25rem;">
+          What began as a passionate event design studio in Kurnool, Andhra Pradesh has evolved into South India's leading full-service event management ecosystem. Founded under the leadership of <strong>Srujal G.</strong>, we unify bespoke gold floral mandap artistry, 100kW concert line-array sound engineering, 3D laser visual projections, and encrypted SVG QR digital ticketing.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.75rem; margin-bottom: 2rem;">
+          <div style="background: var(--bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h3 style="font-size: 1.05rem; color: var(--accent-gold-light); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">🎯 Our Mission</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">To design extraordinary event experiences through creative innovation, cutting-edge technology, and flawless execution.</p>
+          </div>
+          <div style="background: var(--bg-card); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <h3 style="font-size: 1.05rem; color: var(--accent-cyan); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">👁️ Our Vision</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5;">To become India's most trusted event management platform for luxury weddings, corporate summits, and arena festivals.</p>
+          </div>
+        </div>
+
+        <!-- Live Statistics Deck -->
+        <div class="hero-stats" style="margin-top: 1rem;">
+          <div class="stat-item"><span class="stat-num">500+</span><span class="stat-lbl">Events Produced</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">150K+</span><span class="stat-lbl">Guests Served</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">50+</span><span class="stat-lbl">Luxury Venues</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">99.8%</span><span class="stat-lbl">Client Rating</span></div>
+        </div>
+      </div>
+
+      <!-- Proportioned Founder Image Card (Sized Elegantly) -->
+      <div style="max-width: 380px; width: 100%; margin: 0 auto;">
+        <div style="position: relative; border-radius: var(--radius-xl); overflow: hidden; border: 2px solid var(--border-glow); box-shadow: var(--shadow-glow); background: var(--bg-surface);">
+          <div style="height: 380px; width: 100%; overflow: hidden;">
+            <img src="images/founder.png" alt="Srujal G. — Founder & Managing Director" style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;" loading="lazy">
+          </div>
+          <div style="padding: 1.25rem; background: linear-gradient(180deg, rgba(15,20,32,0.9) 0%, rgba(7,9,14,0.98) 100%); border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+              <h3 style="font-size: 1.25rem; margin: 0; color: #ffffff;">Srujal G.</h3>
+              <span class="pricing-badge" style="position: static; font-size: 0.7rem; padding: 0.2rem 0.6rem; background: var(--grad-gold); color: #090c14;">FOUNDER & DIRECTOR</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--accent-gold-light); margin: 0 0 0.5rem; font-weight: 600;">Managing Director & Chief Architect</p>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; margin: 0;">Pioneering luxury destination weddings, corporate conventions, and arena concert productions across AP & Telangana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER'S EXECUTIVE STATEMENT -->
+    <section style="margin: 5rem 0 4rem;">
+      <div style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(15, 20, 32, 0.95) 100%); border: 1px solid var(--border-glow); border-radius: var(--radius-xl); padding: 3rem 2.5rem; position: relative; overflow: hidden; backdrop-filter: var(--blur-glass);">
+        <div style="position: absolute; top: -20px; right: -20px; font-size: 10rem; opacity: 0.04; font-family: serif; pointer-events: none; color: var(--accent-gold);">“</div>
+        <div style="max-width: 840px; margin: 0 auto; text-align: center; position: relative; z-index: 2;">
+          <span class="hero-chip" style="background: rgba(212, 175, 55, 0.15); color: var(--accent-gold-light); border-color: rgba(212, 175, 55, 0.3);">💬 Founder's Message</span>
+          <blockquote style="font-size: 1.25rem; font-style: italic; color: var(--text-primary); line-height: 1.7; margin: 1.25rem 0 1.5rem; font-weight: 500;">
+            "At Srujal Event Management, we believe every event is an extraordinary story waiting to unfold. Our commitment is to blend creative design, cutting-edge stage engineering, and zero-friction digital passes to ensure every celebration leaves an indelible mark of magic and precision."
+          </blockquote>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+            <div style="width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--accent-gold);">
+              <img src="images/founder.png" alt="Srujal G." style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+            </div>
+            <div style="text-align: left;">
+              <h4 style="font-size: 1.05rem; margin: 0; color: var(--text-primary);">Srujal G.</h4>
+              <span style="font-size: 0.82rem; color: var(--accent-gold);">Founder & Managing Director</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPANY MILESTONES & TIMELINE -->
+    <section style="margin: 5rem 0;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="hero-chip">🚀 Our Growth Journey</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Key Company Milestones</h2>
+        <p style="color: var(--text-secondary);">How Srujal Event Management expanded from a local studio into a statewide leader.</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-num" style="background: var(--grad-gold); color: #090c14;">2020</div>
+          <h3>Company Foundation</h3>
+          <p>Founded by Srujal G. in Kurnool, AP to deliver premium private party styling and intimate wedding planning.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num" style="background: var(--grad-cyber); color: #ffffff;">2022</div>
+          <h3>Arena AV Production</h3>
+          <p>Expanded operations to include 100kW Line Array sound rigs, DMX 3D laser stage art, and large corporate summits.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num" style="background: var(--grad-emerald); color: #ffffff;">2024</div>
+          <h3>Digital Ticketing Ecosystem</h3>
+          <p>Pioneered instant SVG QR code digital pass generation, real-time telemetry, and automated attendee roster exports.</p>
+        </div>
+
+        <div class="process-step">
+          <div class="process-num" style="background: var(--grad-gold); color: #090c14;">2026</div>
+          <h3>500+ Milestone</h3>
+          <p>Crossed 500+ successful royal weddings, arena concerts, and developer hackathons with a 99.8% satisfaction rating.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR VALUES SECTION -->
+    <section style="margin: 5rem 0;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">⭐ Core Beliefs</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Our Core Values</h2>
+        <p style="color: var(--text-secondary);">The five pillars that guide every decision and event production we undertake.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Creativity</h3>
+          <p>We push visual boundaries with custom theme styling, 3D laser lighting, and gold floral mandap installations.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💎</div>
+          <h3>Excellence</h3>
+          <p>Delivering 100% precision from red carpet reception and guest hospitality to acoustic sound calibration.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Reliability</h3>
+          <p>Punctual schedules, backup generators, low-latency Wi-Fi grids, and 24/7 dedicated support.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Innovation</h3>
+          <p>Pioneering instant SVG QR ticket passes, organizer revenue telemetry, and live attendee roster telemetry.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Customer First</h3>
+          <p>Your vision is our priority. We collaborate closely to ensure your celebration reflects your personal story.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE LEADERSHIP TEAM SECTION -->
+    <section style="margin-top: 5rem;">
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="hero-chip">👥 Meet Our Leadership</span>
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">Executive Leadership Team</h2>
+        <p style="color: var(--text-secondary);">The creative directors, AV engineers, and event planners behind Srujal Event Management.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Srujal G. -->
+        <div class="team-card">
+          <div class="service-img-wrap" style="height: 140px; width: 140px; border-radius: 50%; margin: 0 auto 1.25rem; border: 3px solid var(--accent-gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); overflow: hidden;">
+            <img src="images/founder.png" alt="Srujal G. - Founder & Executive Director" style="object-fit: cover; object-position: top center; width: 100%; height: 100%;">
+          </div>
+          <h3>Srujal G.</h3>
+          <span class="team-role" style="color: var(--accent-gold-light);">Founder & Executive Director</span>
+          <p class="team-bio">Founder and strategic visionary overseeing luxury destination weddings, corporate summits, and statewide arena show management.</p>
+        </div>
+
+        <!-- Priya Sharma -->
+        <div class="team-card">
+          <div class="service-img-wrap" style="height: 140px; width: 140px; border-radius: 50%; margin: 0 auto 1.25rem; border: 3px solid var(--accent-cyan); box-shadow: 0 0 20px rgba(0, 242, 254, 0.25); overflow: hidden;">
+            <img src="images/birthday_gala.jpg" alt="Priya Sharma - Head of Creative Event Design" style="object-fit: cover; width: 100%; height: 100%;">
+          </div>
+          <h3>Priya Sharma</h3>
+          <span class="team-role">Head of Creative Event Design</span>
+          <p class="team-bio">Specialist in gold mandap styling, royal floral canopy installations, and luxury theme aesthetics.</p>
+        </div>
+
+        <!-- Marcus Vance -->
+        <div class="team-card">
+          <div class="service-img-wrap" style="height: 140px; width: 140px; border-radius: 50%; margin: 0 auto 1.25rem; border: 3px solid var(--accent-cyan); box-shadow: 0 0 20px rgba(0, 242, 254, 0.25); overflow: hidden;">
+            <img src="images/concert_stage.jpg" alt="Marcus Vance - Audio-Visual & Sound Director" style="object-fit: cover; width: 100%; height: 100%;">
+          </div>
+          <h3>Marcus Vance</h3>
+          <span class="team-role">Audio-Visual & Sound Director</span>
+          <p class="team-bio">Concert Line Array audio engineer and DMX 3D laser stage designer with 100+ arena show credits.</p>
+        </div>
+
+        <!-- Elena Rostova -->
+        <div class="team-card">
+          <div class="service-img-wrap" style="height: 140px; width: 140px; border-radius: 50%; margin: 0 auto 1.25rem; border: 3px solid var(--accent-cyan); box-shadow: 0 0 20px rgba(0, 242, 254, 0.25); overflow: hidden;">
+            <img src="images/corporate_summit.png" alt="Elena Rostova - Client Relations & Hospitality" style="object-fit: cover; width: 100%; height: 100%;">
+          </div>
+          <h3>Elena Rostova</h3>
+          <span class="team-role">Client Relations & Hospitality</span>
+          <p class="team-bio">Oversees C-Suite corporate VIP lounges, red carpet guest check-in, and 108-item banquet catering.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+            <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+          </a>
+          <p>Designing extraordinary weddings, concerts, corporate events, hackathons, and unforgettable luxury experiences across AP & Telangana.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=Weddings">Royal Weddings</a></li>
+            <li><a href="events.html?cat=Concerts">Arena Concerts</a></li>
+            <li><a href="events.html?cat=Corporate">Corporate Summits</a></li>
+            <li><a href="events.html?cat=Hackathons">Developer Hackathons</a></li>
+            <li><a href="events.html?cat=Gaming">Esports Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Social</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="events.html?view=tickets">My Ticket Wallet</a></li>
+            <li><a href="contact.html">Support Hotline</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Srujal Event Management. All rights reserved.</span>
+        <span>Crafted with Luxury Glassmorphism & Gold Aesthetics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

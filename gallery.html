@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Photo & Highlights Gallery — Srujal Event Management</title>
+  <meta name="description" content="Explore high-definition photos and highlights from flagship AI summits, royal weddings, electronic music festivals, and esports arenas hosted on Srujal Event Management.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('srujalem_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Header Nav -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+        <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="events.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Events</span>
+        </a>
+        <a href="about.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>About Us</span>
+        </a>
+        <a href="services.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="gallery.html" class="nav-link active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <a href="events.html" class="btn btn-primary"><span>Browse Events</span></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="events.html" class="nav-link">Events Deck</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link active">Gallery</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </aside>
+
+  <main class="app-main">
+    <!-- Gallery Hero Header -->
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <span class="hero-chip">🖼️ Event Portfolio Gallery</span>
+      <h1 style="font-size: 2.95rem; margin: 0.5rem 0 1rem; font-weight: 800;">Event Showcase Gallery</h1>
+      <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto; font-size: 1.15rem; line-height: 1.65;">
+        Visual highlights from our recent royal weddings, concerts, AI summits, hackathons, and esports tournaments.
+      </p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="category-pills" id="gallery-pills" style="justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem;">
+      <button class="pill-btn active" data-cat="All">All Showcase Photos</button>
+      <button class="pill-btn" data-cat="Weddings">💍 Royal Weddings</button>
+      <button class="pill-btn" data-cat="Birthdays">🎂 Birthday Galas</button>
+      <button class="pill-btn" data-cat="Concerts">🎵 Arena Concerts</button>
+      <button class="pill-btn" data-cat="Hackathons">💻 Hackathons</button>
+      <button class="pill-btn" data-cat="Esports">🎮 Esports Arenas</button>
+    </div>
+
+    <!-- Gallery Grid with Unique Images -->
+    <div class="gallery-grid" id="gallery-grid-container">
+      <!-- 1. Royal Wedding -->
+      <article class="gallery-card" data-cat="Weddings">
+        <div class="gallery-img-container">
+          <img src="images/royal_wedding.jpg" alt="Royal Heritage Wedding Mandap & Canopy Decor" loading="lazy">
+          <div class="card-banner-overlay" style="display: flex; align-items: flex-end; padding: 1.25rem; background: linear-gradient(0deg, rgba(7,9,14,0.95) 0%, rgba(7,9,14,0) 100%); width: 100%; height: 100%;">
+            <div>
+              <span class="category-tag">Weddings</span>
+              <h3 style="font-size: 1.1rem; color: #ffffff; margin-top: 0.35rem;">Royal Heritage Wedding Mandap</h3>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Birthday Gala -->
+      <article class="gallery-card" data-cat="Birthdays">
+        <div class="gallery-img-container">
+          <img src="images/birthday_gala.jpg" alt="Extravagant Theme Birthday Gala" loading="lazy">
+          <div class="card-banner-overlay" style="display: flex; align-items: flex-end; padding: 1.25rem; background: linear-gradient(0deg, rgba(7,9,14,0.95) 0%, rgba(7,9,14,0) 100%); width: 100%; height: 100%;">
+            <div>
+              <span class="category-tag">Birthdays</span>
+              <h3 style="font-size: 1.1rem; color: #ffffff; margin-top: 0.35rem;">Luxury Theme Birthday Gala</h3>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Concert Stage -->
+      <article class="gallery-card" data-cat="Concerts">
+        <div class="gallery-img-container">
+          <img src="images/concert_stage.jpg" alt="Star DJ Arena Concert & 3D Laser Stage" loading="lazy">
+          <div class="card-banner-overlay" style="display: flex; align-items: flex-end; padding: 1.25rem; background: linear-gradient(0deg, rgba(7,9,14,0.95) 0%, rgba(7,9,14,0) 100%); width: 100%; height: 100%;">
+            <div>
+              <span class="category-tag">Concerts</span>
+              <h3 style="font-size: 1.1rem; color: #ffffff; margin-top: 0.35rem;">Star DJ Arena Concert Finale</h3>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Developer Hackathon -->
+      <article class="gallery-card" data-cat="Hackathons">
+        <div class="gallery-img-container">
+          <img src="images/hackathon.jpg" alt="48-Hour National Developer Hackathon" loading="lazy">
+          <div class="card-banner-overlay" style="display: flex; align-items: flex-end; padding: 1.25rem; background: linear-gradient(0deg, rgba(7,9,14,0.95) 0%, rgba(7,9,14,0) 100%); width: 100%; height: 100%;">
+            <div>
+              <span class="category-tag">Hackathons</span>
+              <h3 style="font-size: 1.1rem; color: #ffffff; margin-top: 0.35rem;">48-Hour Developer Hackathon</h3>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Esports Arena -->
+      <article class="gallery-card" data-cat="Esports">
+        <div class="gallery-img-container">
+          <img src="images/esports_arena.jpg" alt="Apex Battle Royale Esports Arena Finals" loading="lazy">
+          <div class="card-banner-overlay" style="display: flex; align-items: flex-end; padding: 1.25rem; background: linear-gradient(0deg, rgba(7,9,14,0.95) 0%, rgba(7,9,14,0) 100%); width: 100%; height: 100%;">
+            <div>
+              <span class="category-tag">Esports</span>
+              <h3 style="font-size: 1.1rem; color: #ffffff; margin-top: 0.35rem;">Esports Championship Arena</h3>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+            <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+          </a>
+          <p>Designing extraordinary weddings, concerts, corporate events, hackathons, and unforgettable luxury experiences across AP & Telangana.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=Weddings">Royal Weddings</a></li>
+            <li><a href="events.html?cat=Concerts">Arena Concerts</a></li>
+            <li><a href="events.html?cat=Corporate">Corporate Summits</a></li>
+            <li><a href="events.html?cat=Hackathons">Developer Hackathons</a></li>
+            <li><a href="events.html?cat=Gaming">Esports Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Social</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="events.html?view=tickets">My Ticket Wallet</a></li>
+            <li><a href="contact.html">Support Hotline</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Srujal Event Management. All rights reserved.</span>
+        <span>Crafted with Luxury Glassmorphism & Gold Aesthetics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-toggle');
+      const mobileDrawer = document.getElementById('mobile-nav-drawer');
+      const mobileBackdrop = document.getElementById('mobile-nav-backdrop');
+      if (mobileBtn && mobileDrawer && mobileBackdrop) {
+        const toggleDrawer = (s) => {
+          mobileDrawer.classList.toggle('open', s);
+          mobileBackdrop.classList.toggle('open', s);
+        };
+        mobileBtn.addEventListener('click', () => toggleDrawer(!mobileDrawer.classList.contains('open')));
+        mobileBackdrop.addEventListener('click', () => toggleDrawer(false));
+      }
+
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        const savedTheme = localStorage.getItem('srujalem_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeToggle.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme') || 'dark';
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('srujalem_theme', next);
+        });
+      }
+
+      // Category Filter Pills
+      const pills = document.querySelectorAll('#gallery-pills .pill-btn');
+      const cards = document.querySelectorAll('.gallery-card');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const cat = pill.getAttribute('data-cat');
+          cards.forEach(card => {
+            if (cat === 'All' || card.getAttribute('data-cat') === cat) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

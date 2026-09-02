@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events Deck & Booking — Srujal Event Management</title>
+  <meta name="description" content="Discover, search, filter, and book digital passes for upcoming weddings, tech summits, concerts, hackathons, and esports finals.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- App Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function() {
+      const saved = localStorage.getItem('srujalem_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', saved);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" id="logo-btn">
+        <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+        <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <span>Home</span>
+        </a>
+        <button class="nav-link active" data-view="explorer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          <span>Events</span>
+        </button>
+        <button class="nav-link" data-view="calendar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>Calendar</span>
+        </button>
+        <button class="nav-link" data-view="dashboard">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-link" data-view="tickets">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/><line x1="9" y1="12" x2="15" y2="12"/></svg>
+          <span>My Tickets</span>
+          <span class="badge" id="tickets-count-badge">0</span>
+        </button>
+        <a href="about.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>About Us</span>
+        </a>
+        <a href="services.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Services</span>
+        </a>
+        <a href="gallery.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="nav-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Contact</span>
+        </a>
+      </nav>
+
+      <!-- Action Controls -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Mobile Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <button class="btn btn-primary" id="open-host-modal-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span>Host a Event</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="events.html" class="nav-link active">Events Deck</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </aside>
+
+  <!-- Main View Router Container -->
+  <main class="app-main">
+    <!-- 1. EXPLORER VIEW -->
+    <section id="explorer-view" class="view-section active">
+      <!-- Hero Banner -->
+      <div class="hero-banner reveal-on-scroll" style="background: linear-gradient(180deg, rgba(7, 9, 14, 0.7) 0%, rgba(7, 9, 14, 0.95) 100%), url('images/concert_stage.jpg') center/cover no-repeat;">
+        <div class="hero-content">
+          <span class="hero-chip">✨ Discover Extraordinary Events</span>
+          <h1 class="hero-title">Find the Perfect Experience for Your Next Moment</h1>
+          <p class="hero-subtitle">Book verified passes for royal weddings, flagship AI tech summits, music festivals, executive business forums, and esports championships.</p>
+          
+          <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <button class="btn btn-primary btn-lg" id="hero-host-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              <span>Host a Event</span>
+            </button>
+            <a href="#events-grid-container" class="btn btn-secondary btn-lg">Browse Events Deck</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num" id="stat-total-events">500+</span>
+              <span class="stat-lbl">Events Hosted</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">150k+</span>
+              <span class="stat-lbl">Tickets Delivered</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-num">99.8%</span>
+              <span class="stat-lbl">Gate Check-in Rate</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-art-card" style="background: linear-gradient(135deg, rgba(22, 30, 46, 0.9) 0%, rgba(13, 18, 29, 0.95) 100%), url('images/tech_ai_summit.jpg') center/cover no-repeat;">
+          <div class="art-glow-orb"></div>
+          <div class="featured-badge">🔥 Featured Flagship Event</div>
+          <div class="art-details">
+            <span class="art-category" style="color: var(--accent-gold-light);">Tech & Corporate</span>
+            <h3>National AI & Enterprise Tech Summit 2026</h3>
+            <p>HITEX Convention Centre, Hyderabad • Sep 24, 2026</p>
+            <button class="btn btn-sm btn-glass" id="featured-event-btn">Quick Book VIP Pass</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls & Filter Bar -->
+      <div class="filter-toolbar">
+        <div class="search-box">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="search-input" placeholder="Search events by title, venue, category, or keywords..." aria-label="Search events">
+          <button class="clear-search-btn" id="clear-search-btn" title="Clear Search" hidden>&times;</button>
+        </div>
+        
+        <div class="toolbar-actions">
+          <div class="select-wrapper">
+            <label for="sort-select" class="visually-hidden">Sort events</label>
+            <select id="sort-select" class="custom-select">
+              <option value="date-asc">Date: Upcoming First</option>
+              <option value="popular">Popularity: Most Attendees</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+          <div class="view-toggle-group">
+            <button class="toggle-btn active" id="view-mode-grid" title="Grid Layout" aria-label="Grid View">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </button>
+            <button class="toggle-btn" id="view-mode-list" title="List Layout" aria-label="List View">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills (All 8 Specific Categories) -->
+      <div class="category-pills" id="category-pills-container">
+        <button class="pill-btn active" data-category="All">All Categories</button>
+        <button class="pill-btn" data-category="Weddings">💍 Weddings & Ceremonies</button>
+        <button class="pill-btn" data-category="Tech">💻 Tech & Corporate</button>
+        <button class="pill-btn" data-category="Music">🎵 Music & Concerts</button>
+        <button class="pill-btn" data-category="Business">💼 Business & Corporate</button>
+        <button class="pill-btn" data-category="Galas">🎂 Galas & Celebrations</button>
+        <button class="pill-btn" data-category="Production">🎥 Production & Expos</button>
+        <button class="pill-btn" data-category="Hackathons">🚀 Hackathons & Tech</button>
+        <button class="pill-btn" data-category="Gaming">🎮 Gaming & Esports</button>
+      </div>
+
+      <div class="filter-status-bar" id="filter-status-bar">
+        <span>Showing <strong id="results-count">0</strong> verified events deck listings</span>
+      </div>
+
+      <!-- Events Grid / List Container -->
+      <div class="events-grid" id="events-grid-container">
+        <!-- Dynamic event cards -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty-state" hidden>
+        <div class="empty-icon">🔍</div>
+        <h3>No Matching Events Found</h3>
+        <p>Try clearing your search query or selecting a different category filter.</p>
+        <button class="btn btn-secondary" id="reset-filters-btn">Reset All Filters</button>
+      </div>
+    </section>
+
+    <!-- 2. CALENDAR VIEW -->
+    <section id="calendar-view" class="view-section">
+      <div class="section-header">
+        <div>
+          <h2>Interactive Calendar Schedule</h2>
+          <p>Browse scheduled events month by month and click on any event to book tickets.</p>
+        </div>
+        <div class="calendar-controls">
+          <button class="btn btn-secondary btn-icon" id="cal-prev-btn">&lt;</button>
+          <span class="calendar-month-title" id="cal-month-title">Month Year</span>
+          <button class="btn btn-secondary btn-icon" id="cal-next-btn">&gt;</button>
+          <button class="btn btn-secondary" id="cal-today-btn">Today</button>
+        </div>
+      </div>
+      <div class="calendar-wrapper">
+        <div class="calendar-weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div class="calendar-days-grid" id="calendar-days-grid">
+          <!-- Calendar Days inserted dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DASHBOARD VIEW -->
+    <section id="dashboard-view" class="view-section">
+      <div class="section-header">
+        <div>
+          <h2>Organizer Telemetry Dashboard</h2>
+          <p>Real-time ticket sales revenue, seating occupancy metrics, and attendee roster management.</p>
+        </div>
+        <button class="btn btn-primary" id="dash-create-btn">+ Host New Event</button>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="metric-data">
+            <span class="metric-label">Total Ticket Sales</span>
+            <h3 class="metric-value" id="dash-total-revenue">$0.00</h3>
+            <span class="metric-trend positive">↑ 18.4% this month</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"/></svg>
+          </div>
+          <div class="metric-data">
+            <span class="metric-label">Tickets Issued</span>
+            <h3 class="metric-value" id="dash-tickets-sold">0</h3>
+            <span class="metric-trend positive">↑ High Attendee Demand</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="metric-data">
+            <span class="metric-label">Active Events Hosted</span>
+            <h3 class="metric-value" id="dash-active-events">0</h3>
+            <span class="metric-trend neutral">Across 8 Categories</span>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="metric-data">
+            <span class="metric-label">Avg Seat Occupancy</span>
+            <h3 class="metric-value" id="dash-occupancy">86.5%</h3>
+            <span class="metric-trend positive">Verified Attendance</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="charts-row">
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Revenue by Category Breakdown</h3>
+            <span class="chart-badge">Live Telemetry</span>
+          </div>
+          <div class="category-bars-container" id="category-chart-bars">
+            <!-- Dynamic bars -->
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Overall Venue Capacity Fill</h3>
+            <span class="chart-badge">Occupancy Ratio</span>
+          </div>
+          <div class="gauge-container" id="capacity-gauge-container">
+            <!-- Ring fill visualization -->
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Managed Event Roster</h3>
+          <div class="table-actions">
+            <input type="text" id="dash-search-table" placeholder="Filter managed events..." class="input-sm">
+            <button class="btn btn-secondary btn-sm" id="export-csv-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Export CSV Roster
+            </button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Event Title</th>
+                <th>Category</th>
+                <th>Date & Time</th>
+                <th>Price</th>
+                <th>Capacity & Sold</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="dash-events-tbody">
+              <!-- Table rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. MY TICKETS VIEW -->
+    <section id="tickets-view" class="view-section">
+      <div class="section-header">
+        <div>
+          <h2>My Digital Ticket Wallet</h2>
+          <p>View your confirmed bookings, download digital SVG QR passes, or present at venue gate check-in.</p>
+        </div>
+      </div>
+      <div class="tickets-grid" id="user-tickets-container">
+        <!-- Rendered tickets -->
+      </div>
+    </section>
+  </main>
+
+  <!-- MODALS SYSTEM -->
+  <!-- 1. EVENT DETAIL MODAL -->
+  <div class="modal-backdrop" id="detail-modal-backdrop" hidden>
+    <div class="modal-card modal-lg" role="dialog" aria-modal="true" aria-labelledby="modal-event-title">
+      <button class="modal-close-btn" id="close-detail-modal-btn">&times;</button>
+      
+      <div class="detail-hero" id="modal-event-hero">
+        <div class="detail-hero-overlay"></div>
+        <span class="category-badge" id="modal-event-category">Category</span>
+        <h2 id="modal-event-title">Event Title</h2>
+        <p class="modal-hero-sub" id="modal-event-tagline">Short Tagline</p>
+      </div>
+      <div class="detail-body">
+        <div class="detail-main-col">
+          <div class="meta-pills-row">
+            <div class="meta-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <span class="meta-label">Date & Time</span>
+                <span class="meta-val" id="modal-event-datetime">Oct 24, 2026 • 10:00 AM</span>
+              </div>
+            </div>
+            <div class="meta-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <span class="meta-label">Location / Venue</span>
+                <span class="meta-val" id="modal-event-location">Convention Center</span>
+              </div>
+            </div>
+            <div class="meta-pill">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              <div>
+                <span class="meta-label">Seats Remaining</span>
+                <span class="meta-val" id="modal-event-seats">42 available</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>About This Event</h3>
+            <p id="modal-event-description">Event description paragraph details.</p>
+          </div>
+
+          <div class="detail-section">
+            <h3>Event Agenda & Schedule</h3>
+            <div class="agenda-timeline" id="modal-event-agenda">
+              <!-- Agenda items -->
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3>Featured Speakers & Production Crew</h3>
+            <div class="speakers-row" id="modal-event-speakers">
+              <!-- Speakers list -->
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-side-col">
+          <div class="booking-card">
+            <h3>Reserve Your Tickets</h3>
+            <p class="booking-subtitle">Select pass tier and quantity.</p>
+            <div class="tier-select-group">
+              <label class="tier-option active" data-tier="general" data-modifier="1">
+                <input type="radio" name="ticket-tier" value="general" checked>
+                <div class="tier-info">
+                  <span class="tier-name">General Admission</span>
+                  <span class="tier-desc">Full access pass to keynotes and main hall</span>
+                </div>
+                <span class="tier-price" id="modal-price-general">$49</span>
+              </label>
+              <label class="tier-option" data-tier="vip" data-modifier="2.2">
+                <input type="radio" name="ticket-tier" value="vip">
+                <div class="tier-info">
+                  <span class="tier-name">VIP All-Access Pass ✨</span>
+                  <span class="tier-desc">Front-row seating, lounge access & swag kit</span>
+                </div>
+                <span class="tier-price" id="modal-price-vip">$109</span>
+              </label>
+            </div>
+
+            <div class="qty-control-row">
+              <span>Ticket Quantity</span>
+              <div class="qty-stepper">
+                <button class="qty-btn" id="qty-minus-btn">-</button>
+                <span id="qty-display-val">1</span>
+                <button class="qty-btn" id="qty-plus-btn">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-box">
+              <span>Total Amount:</span>
+              <strong class="total-price-val" id="modal-calc-total">$49.00</strong>
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" id="proceed-checkout-btn">
+              Proceed to Book Ticket
+            </button>
+            <p class="secure-checkout-note">🔒 Instant Encrypted SVG QR Code Pass Delivery</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. CHECKOUT MODAL -->
+  <div class="modal-backdrop" id="checkout-modal-backdrop" hidden>
+    <div class="modal-card modal-md" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="modal-close-btn" id="close-checkout-modal-btn">&times;</button>
+      
+      <div class="modal-header">
+        <h2 id="checkout-title">Complete Reservation</h2>
+        <p>Enter attendee details to generate your verified digital ticket pass.</p>
+      </div>
+      <form id="checkout-form" class="modal-form">
+        <div class="order-summary-pill">
+          <div>
+            <strong id="chk-event-title">Event Title</strong>
+            <div class="text-muted" id="chk-tier-qty">1x General Admission</div>
+          </div>
+          <div class="chk-amount" id="chk-total-amount">$49.00</div>
+        </div>
+        <div class="form-group">
+          <label for="chk-name">Full Name <span class="req">*</span></label>
+          <input type="text" id="chk-name" placeholder="e.g. Alex Mercer" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="chk-email">Email Address (for ticket pass delivery) <span class="req">*</span></label>
+          <input type="email" id="chk-email" placeholder="alex.mercer@example.com" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="chk-phone">Phone Number (optional)</label>
+          <input type="tel" id="chk-phone" placeholder="+91 91823 22918" class="form-input">
+        </div>
+        <div class="form-group">
+          <label>Payment Method Simulation</label>
+          <div class="payment-methods-row">
+            <label class="pay-method-chip active">
+              <input type="radio" name="pay-method" value="card" checked> 💳 Credit Card
+            </label>
+            <label class="pay-method-chip">
+              <input type="radio" name="pay-method" value="applepay"> 🍏 Apple Pay
+            </label>
+            <label class="pay-method-chip">
+              <input type="radio" name="pay-method" value="upi"> ⚡ Instant UPI
+            </label>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancel-checkout-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="confirm-pay-btn">Confirm Reservation & Get Ticket</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. DIGITAL TICKET PASS MODAL -->
+  <div class="modal-backdrop" id="ticket-pass-modal-backdrop" hidden>
+    <div class="modal-card modal-ticket" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="close-pass-modal-btn">&times;</button>
+      
+      <div class="pass-card" id="printable-ticket-card">
+        <div class="pass-header">
+          <div class="pass-brand">
+            <span class="pass-logo-dot"></span> Srujal Event Management Digital Pass
+          </div>
+          <span class="pass-status-badge">VALID TICKET</span>
+        </div>
+        <div class="pass-body">
+          <h2 id="pass-event-title">Event Title Here</h2>
+          <p class="pass-category" id="pass-event-category">Tech Summit</p>
+          <div class="pass-details-grid">
+            <div>
+              <span class="pass-label">Attendee</span>
+              <strong id="pass-attendee-name">Alex Mercer</strong>
+            </div>
+            <div>
+              <span class="pass-label">Pass Tier</span>
+              <strong id="pass-tier-name">VIP All-Access Pass</strong>
+            </div>
+            <div>
+              <span class="pass-label">Date & Time</span>
+              <span id="pass-date-time">Oct 24, 2026 • 10:00 AM</span>
+            </div>
+            <div>
+              <span class="pass-label">Venue</span>
+              <span id="pass-venue">Convention Center</span>
+            </div>
+            <div>
+              <span class="pass-label">Seat Code</span>
+              <strong id="pass-seat-code">SEC-A / ROW 4 / #18</strong>
+            </div>
+            <div>
+              <span class="pass-label">Ticket ID</span>
+              <code id="pass-ticket-id">EP-98234-X</code>
+            </div>
+          </div>
+
+          <div class="qr-section">
+            <div class="qr-box" id="pass-qr-container">
+              <!-- SVG QR Code -->
+            </div>
+            <span class="qr-caption">Scan code at venue gate for instant check-in</span>
+          </div>
+        </div>
+        <div class="pass-footer">
+          <span>Official Event Pass • Powered by Srujal Event Management</span>
+        </div>
+      </div>
+      <div class="ticket-modal-actions">
+        <button class="btn btn-secondary" id="download-pass-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Print / Save Pass
+        </button>
+        <button class="btn btn-primary" id="view-my-tickets-btn">Go to My Tickets Wallet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. HOST EVENT WIZARD MODAL -->
+  <div class="modal-backdrop" id="host-modal-backdrop" hidden>
+    <div class="modal-card modal-md" role="dialog" aria-modal="true" aria-labelledby="host-modal-title">
+      <button class="modal-close-btn" id="close-host-modal-btn">&times;</button>
+      
+      <div class="modal-header">
+        <h2 id="host-modal-title">Host a Event</h2>
+        <p>Fill out event details to list your event live on the Srujal Event Management discovery deck.</p>
+      </div>
+      <form id="host-event-form" class="modal-form">
+        <div class="form-group">
+          <label for="host-title">Event Title <span class="req">*</span></label>
+          <input type="text" id="host-title" placeholder="e.g. Royal Sangeet Gala & DJ Night" required class="form-input">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="host-category">Category <span class="req">*</span></label>
+            <select id="host-category" class="form-input" required>
+              <option value="Weddings & Ceremonies">💍 Weddings & Ceremonies</option>
+              <option value="Tech & Corporate">💻 Tech & Corporate</option>
+              <option value="Music & Concerts">🎵 Music & Concerts</option>
+              <option value="Business & Corporate">💼 Business & Corporate</option>
+              <option value="Galas & Celebrations">🎂 Galas & Celebrations</option>
+              <option value="Production & Expos">🎥 Production & Expos</option>
+              <option value="Hackathons & Tech">🚀 Hackathons & Tech</option>
+              <option value="Gaming & Esports">🎮 Gaming & Esports</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="host-capacity">Total Ticket Capacity <span class="req">*</span></label>
+            <input type="number" id="host-capacity" placeholder="250" value="250" min="1" required class="form-input">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="host-price">Ticket Price ($ USD) <span class="req">*</span></label>
+            <input type="number" id="host-price" placeholder="49.00" min="0" step="1" required class="form-input">
+            <small id="host-price-calc-note" style="font-size: 0.775rem; display: block; margin-top: 0.35rem; color: var(--accent-cyan); font-weight: 600;">⚡ Auto-calculated based on event category & capacity</small>
+          </div>
+          <div class="form-group">
+            <label for="host-date">Date & Time <span class="req">*</span></label>
+            <input type="datetime-local" id="host-date" required class="form-input">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="host-location">Venue / Virtual Link <span class="req">*</span></label>
+          <input type="text" id="host-location" placeholder="e.g. Royal Pavilion Palace, Kurnool or HITEX Hyderabad" required class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="host-banner-theme">Banner Theme Style</label>
+          <select id="host-banner-theme" class="form-input">
+            <option value="gradient-gold">Royal Gold & Amber</option>
+            <option value="gradient-cyber">Cyber Neon Blue</option>
+            <option value="gradient-sunset">Sunset Orange & Crimson</option>
+            <option value="gradient-emerald">Emerald Matrix Green</option>
+            <option value="gradient-royal">Royal Sapphire Deep Blue</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="host-description">Event Overview Description <span class="req">*</span></label>
+          <textarea id="host-description" rows="4" placeholder="Describe the highlights, agenda, speakers, and benefits..." required class="form-input"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancel-host-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="publish-event-btn">Publish Event Now</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- App Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <img src="images/logo.png" alt="Srujal Event Management Emblem Logo" class="brand-logo-img">
+            <span class="logo-text"><span class="logo-name">Srujal</span><span class="logo-accent">Event Management</span></span>
+          </a>
+          <p>Designing extraordinary weddings, concerts, corporate events, hackathons, and unforgettable luxury experiences across AP & Telangana.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="gallery.html">Gallery Portfolio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul class="footer-links">
+            <li><a href="events.html?cat=Weddings">Royal Weddings</a></li>
+            <li><a href="events.html?cat=Concerts">Arena Concerts</a></li>
+            <li><a href="events.html?cat=Corporate">Corporate Summits</a></li>
+            <li><a href="events.html?cat=Hackathons">Developer Hackathons</a></li>
+            <li><a href="events.html?cat=Gaming">Esports Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support & Social</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help & FAQs</a></li>
+            <li><a href="events.html?view=tickets">My Ticket Wallet</a></li>
+            <li><a href="contact.html">Support Hotline</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Srujal Event Management. All rights reserved.</span>
+        <span>Crafted with Luxury Glassmorphism & Gold Aesthetics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
